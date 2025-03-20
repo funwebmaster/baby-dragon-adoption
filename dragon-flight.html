@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dragon Flight</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: skyblue;
+        }
+        .game-container {
+            position: relative;
+            width: 400px;
+            height: 500px;
+            margin: auto;
+            border: 2px solid #333;
+            background-color: lightblue;
+            overflow: hidden;
+        }
+        .dragon {
+            width: 50px;
+            position: absolute;
+            bottom: 200px;
+            left: 50px;
+        }
+        .obstacle {
+            width: 50px;
+            height: 100px;
+            position: absolute;
+            background-color: green;
+            right: 0;
+            bottom: 0;
+        }
+        .score {
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🚀 Dragon Flight</h1>
+    </header>
+
+    <p>Press SPACE or TAP to help the baby dragon fly and avoid obstacles!</p>
+
+    <div class="score">Score: <span id="score">0</span></div>
+
+    <div class="game-container" id="gameContainer">
+        <img src="images/pet-dragon.png" alt="Dragon" class="dragon" id="dragon">
+    </div>
+
+    <button onclick="window.location.href='../games.html'">Back to Games</button>
+
+    <script>
+        let dragon = document.getElementById("dragon");
+        let gameContainer = document.getElementById("gameContainer");
+        let scoreDisplay = document.getElementById("score");
+        let gravity = 2;
+        let velocity = 0;
+        let score = 0;
+        let gameRunning = true;
+
+        function flap() {
+            if (gameRunning) {
+                velocity = -10; // Move the dragon up
+            }
+        }
+
+        function gameLoop() {
+            if (!gameRunning) return;
+
+            velocity += gravity;
+            let dragonPosition = dragon.offsetTop + velocity;
+            
+            if (dragonPosition < 0) dragonPosition = 0; // Prevent flying too high
+            if (dragonPosition > 450) {
+                alert("Game Over! Your dragon hit the ground.");
+                gameRunning = false;
+                return;
+            }
+
+            dragon.style.top = dragonPosition + "px";
+            requestAnimationFrame(gameLoop);
+        }
+
+        document.addEventListener("keydown", function(event) {
+            if (event.code === "Space") flap();
+        });
+
+        document.addEventListener("click", flap);
+
+        gameLoop(); // Start the game
+    </script>
+</body>
+</html>

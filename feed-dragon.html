@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feed the Baby Dragon</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+
+
+
+        .game-container {
+            margin-top: 20px;
+        }
+        .dragon-img {
+            width: 150px;
+        }
+        .food-items img {
+            width: 80px;
+            margin: 10px;
+            cursor: pointer;
+        }
+        .score {
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Feed the Baby Dragon</h1>
+    </header>
+
+    <div class="game-container">
+        <p>Click on the correct food items to feed your baby dragon!</p>
+        <img src="images/pet-dragon.png" alt="Baby Dragon" class="dragon-img">
+        <p class="score">Happiness Score: <span id="score">0</span></p>
+
+        <div class="food-items">
+            <img src="images/apple.png" alt="Apple" onclick="feedDragon(true)">
+            <img src="images/fish.png" alt="Fish" onclick="feedDragon(true)">
+            <img src="images/cookie.png" alt="Cookie" onclick="feedDragon(true)">
+            <img src="images/rock.png" alt="Rock" onclick="feedDragon(false)">
+            <img src="images/shoe.png" alt="Shoe" onclick="feedDragon(false)">
+        </div>
+        
+        <button onclick="window.location.href='games.html'">Back to Games</button>
+    </div>
+
+    <script>
+        let score = 0;
+
+        function feedDragon(isFood) {
+            if (isFood) {
+                score += 10;
+                document.getElementById("score").textContent = score;
+                if (score >= 30) {
+                    alert("Your dragon is full and happy! 🎉");
+                }
+            } else {
+                alert("Oops! That’s not food! 😅");
+            }
+        }
+    </script>
+</body>
+</html>

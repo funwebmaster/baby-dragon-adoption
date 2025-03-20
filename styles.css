@@ -1,0 +1,176 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000000;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #e260c4;
+    padding: 20px;
+    color: white;
+    font-size: 1.5em;
+}
+
+.dragon-container {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+img {
+    width: 200px;
+    border-radius: 10px;
+}
+
+h2 {
+    color: #e260c4;
+}
+
+h2 i {
+    color: #fff; /* Change this to your preferred color */
+    margin-right: 10px; /* Adds spacing between the icon and text */
+}
+
+
+p {
+    color: #fff;
+    font-size: 1.1em;
+    font-weight: 900;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #e260c4;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+}
+
+.btn:hover {
+    background-color: #41b3a3;
+}
+
+footer {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #e260c4;
+    color: white;
+}
+
+/* --- General Styling for the Stories Page (Dark Mode) --- */
+.story-container, .story-submission {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #222; /* Dark Background */
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.6);
+    color: #fff; /* White text for contrast */
+}
+
+/* --- Styling for the Story List --- */
+.story-list {
+    list-style: none;
+    padding: 0;
+}
+
+.story-list li {
+    background: #333; /* Darker Gray Background */
+    padding: 10px 15px;
+    margin: 10px 0;
+    border-left: 5px solid #ff6b6b; /* Red left border */
+    transition: background 0.3s ease;
+}
+
+.story-list li:hover {
+    background: #444; /* Slightly lighter gray on hover */
+}
+
+.story-list a {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffcc00; /* Gold text for visibility */
+    display: flex;
+    align-items: center;
+}
+
+.story-list a:hover {
+    color: #ff6b6b; /* Red hover effect */
+}
+
+/* --- Styling for the Submission Form --- */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-weight: bold;
+    color: #ffcc00; /* Gold Labels */
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #555; /* Dark Border */
+    border-radius: 5px;
+    font-size: 16px;
+    background: #111; /* Dark Input Field */
+    color: #fff; /* White Text */
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    background: #ff6b6b;
+    color: white;
+    font-size: 18px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #e63946;
+}
+
+/* --- Responsive Design for Mobile Users --- */
+@media (max-width: 768px) {
+    .story-container, .story-submission {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .story-list a {
+        font-size: 16px;
+    }
+
+    button {
+        font-size: 16px;
+    }
+}
+
+.story-content p {
+text-align: center;
+}
+
+h3 {
+    color: #fff;
+}
